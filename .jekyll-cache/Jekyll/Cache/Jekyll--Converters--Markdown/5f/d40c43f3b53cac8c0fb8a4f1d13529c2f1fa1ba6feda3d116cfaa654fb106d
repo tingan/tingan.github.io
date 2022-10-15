@@ -1,0 +1,18 @@
+I"<h2 id="motivation">Motivation</h2>
+
+<p>Quizlet is quite popular for foreign language learning. But it has many limitations for free account. I want to create a small web app for Finnish learning.</p>
+
+<h2 id="technology-stack-choice">Technology stack choice</h2>
+
+<p>Although it’s easy to do it in Laravel as I am already very familiar with it, but I consider Laravel will be a little heavy for such a small web app. As I am familiar with React, Redux, React Hooks, it would be easy to develop the app by MERN (MongoDB, Express, React, Node). For styling, although the Bootstrap will be good choice, but I decide to give TailWindCSS a shot. As TailWindCSS is a new way of styling comparing with SASS and it’s quit popular. so the technology stack choice is MERN + TailWindCSS.</p>
+
+<h2 id="demo">Demo</h2>
+<p><a href="https://youtube.com/shorts/3IJtJpiFbYQ?feature=share">Youtube demo</a></p>
+
+<p><img src="/img/posts/wordslet/wordslet.png" alt="wordslet" width="800" /></p>
+
+<h2 id="features">Features</h2>
+<ul>
+  <li>create</li>
+</ul>
+:ET

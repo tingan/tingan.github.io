@@ -1,1 +1,1 @@
-# tingan.github.io
+A Jekyll Blog about personal hobby projects.

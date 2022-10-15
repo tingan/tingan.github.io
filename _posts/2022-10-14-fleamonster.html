@@ -1,0 +1,40 @@
+---
+layout: post
+title: FleaMonster
+subtitle: Online Second-handed store by Laravel 8
+date: 2022-10-14 19:21 +0300
+background: '/img/bg-computer.jpg'
+---
+
+<h2>Motivation</h2>
+<p>Many Chinese creates second-handed store in WeChat Group. but there are many shortcomings with it. </p>
+<ul>
+    <li>WeChat group has member number limit such as 200 persons.</li>
+    <li>It's obtrusive, which means no matter you are interested with the stuff (e.g. old clothes) or not, the messages will be pushed to you.</li>
+    <li>The messages are not categorized, e.g. clothing, old books etc.</li>
+    <li>If you need to contact the seller, you have to add his or her WeChat Account. It will makes your WeChat contacts grow fast, even it's only for one time transaction.</li>
+    <li>It's not easy to search old messages as the messgaes list will get very long. All you have to do is to search the long message list by scrolling.</li>
+    <li>WeChat will delete the images in mesages which are older than 2 weeks.</li>
+</ul>
+
+So I have the ideas to create an online second-handed store, which is easy to categorize different types of selling and it's easy to find the exact types of stuff you needed by advanced searching. Also the platform will provide real-time chatting function.
+
+<h2>Technology stack choice</h2>
+Although I am already familiar with Drupal, I think Drupal is a quite advanced platform with many extensions and good permission system. However, I think Drupal has to install many extensions and will be slow for such as simple platform. Laravel is also a quite popular PHP framework and it's similar to Ruby on Rails for fast development. Laravel has good MVC pattern and Eloquent model for database ORM.
+Laravel also has WebSocket for real-time messaging. After some analysis and evaluation, I chosen Laravel for the solution.
+
+
+<h2>Demo</h2>
+
+<figure>
+    <img src="/img/posts/fleamonster/homepage.png" alt="fleamonster" width="800" />
+    <figcaption class="text-center">FleaMonster HomePage</figcaption>
+</figure>
+<figure>
+    <img src="/img/posts/fleamonster/add-listing.png" alt="fleamonster" width="800" />
+    <figcaption class="text-center">Add a listing</figcaption>
+</figure>
+<figure>
+    <img src="/img/posts/fleamonster/chat.png" alt="fleamonster" width="800" />
+    <figcaption class="text-center">Chat</figcaption>
+</figure>
