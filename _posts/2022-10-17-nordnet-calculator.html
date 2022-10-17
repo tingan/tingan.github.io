@@ -1,0 +1,22 @@
+---
+layout: post
+title: Nordnet Calculator
+subtitle: A Simple Desktop Stock fees calculator by Electron
+date: 2022-10-17 16:34 +0300
+background: '/img/bg-keyboard.jpg'
+---
+
+<h2>Motivation</h2>
+Nordnet's stock fees can be calculated based on different transaction levels and markets and currencies. It's a simple math calculation problem with many variables.
+
+<h2>Technical stack choice</h2>
+Obviously, a desktop GUI app will be better than web app. as Web app need Web server, while desktop app can launch just with one click. The app doesn't need sophisticated database storage. A simple sqlite db or even JSON file will suffice.
+For Desktop GUI, there are many choices such as Python with Tkinter or PyQT or JavaFX. Both Python or Java GUI can solve the problem easily. But I consider Electron solution. As electron is based on Web technologies such as HTML, CSS and JavaScript.
+
+<h2>Demo</h2>
+<a href="https://github.com/tingan/nordnet-calc">Github source code</a>
+<br />
+<figure>
+    <img src="/img/posts/nordnet-calc/calc.png" alt="lovebooks" width="800" />
+    <figcaption class="text-center">Nordnet Calculator</figcaption>
+</figure>
