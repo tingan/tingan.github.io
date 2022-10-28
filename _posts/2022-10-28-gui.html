@@ -1,0 +1,36 @@
+---
+layout: post
+title: Compare Python and Java in Selenium with GUI App
+subtitle: Python Tkinter vs. Python PyQT vs. JavaFX
+date: 2022-10-28 18:16 +0300
+background: '/img/bg-post.jpg'
+---
+
+<h2>Motivation</h2>
+<p>
+I need to write a web automation application with selenium and multithreading support. In the beginning, I consider using Python for its simplicity and selenium support. So I write a commandline app with Python Click Framework. It works fine, but the commandline app is not user friendly as it need to tweak many different command line options.
+So Later, I considered to write a GUI desktop app. Python has many GUI libraries such as Tkinter, PyQT, PySide (the open source version of PyQT). Java also has many GUI libraries such as Swing and JavaFX.
+</p>
+<h2>Comparison Result</h2>
+<p>
+Tkinter works fine functionally, but it is written is python. so the GUI responsiveness is a little slow. Also Tkinter has some issues of inconsistencies in Windows and Mac platform. E.g. for Mac, I have to install tkmacosx pip module to widgets to working in Mac.
+So later I thought maybe I can use PyQT to rewrite the GUI based on the following considerations. First, PyQT is commercial production, which means it has better support and quality. Although PyQT need to pay license fee, but for open source project and self use ,it's not a problem. Even later need to consider the license fee, PySide is open source and free version of PyQT, the code looks very similar between PyQT and PySide, most times, just need to change the import statements.
+Second, PyQT has a Python wrapper on top of QT (which is written by C++). So the speed and responsiveness of PyQT is much better than Tkinter. Third, PyQT has a QT designer, which can help design GUI interface by drag and drop widgets.
+PyQT version of Selenium app works fine in the beginning, But later I found if the threads are more than 6 or 7, the PyQT GUI app below very slow and unresponsiveness. I think maybe it's because Python's multi-threading support is not real mult-threading because of the GIL(Global Interpretor Lock) limit. The consequence of this is that it's not possible to speed up CPU-intensive Python code by distributing the work among multiple threads.
+There is no easy way to break the GIL limit in Python. So I have to totally rewrite the GUI app in other compiled languages such as Java or C++. But Selenium doesn't officially support C++ (it supports C# and java). So I chose the Java for rewriting. JavaFX is considered a replacement and better choice for Swing. JavaFX also has  GUI designer for drag and drop widgets, the SceneBuilder. After rewrite the Selenium app in JavaFX and with Java 17 Multi-Threading, the new app can support also double the thread loads like 15 to 20 threads and the app still respond well.
+</p>
+<h2>Conclusion</h2>
+<p>From my experiences with Tkinter, PyQT and JavaFX with Selenium GUI app. I come to the following conclusions</p>
+    <ul>
+    <li>
+        Tkinter is good for very simple GUI app like a calculator and non-commercial app (as the inconsistencies issue) and speed.
+    </li>
+    <li>
+        PyQT is good for commercial GUI app when scaling and speed under multi-threading is not a concern,
+    </li>
+    <li>
+        JavaFX is good choice for hobby or both commercial GUI app. Because Java's multi-threading performance is much better than Python, It's a better choice when speed and responsiveness is a concern. Although I didn't test it in C#, but considering the similarity between Java and C#, C# should also be as good as Java or even better choice for GUI app with selenium support.
+    </li>
+</ul>
+
+
