@@ -1,0 +1,82 @@
+---
+layout: post
+title: Wordslet mobile app
+subtitle: by React Native and RTK Query
+date: 2023-05-08 12:29 +0300
+background: "/img/bg-post.jpg"
+---
+
+<h2>Motivation</h2>
+The original motivation for the wordslet came from my elder son's complain that
+Quizlet is too expensive. Although quizlet has free version, but there are many
+limitations such as limiting the times of learning during one day. Also the free
+version of quizlet has too many ads. Also, I feel that I also need such as an
+app for helping me learn Finnish. Originally, I developed a web-based wordslet
+by React Hooks and Node (see:
+https://tingan.github.io/2022/10/14/wordslet.html), it works fine and i use it
+in daily basis. However, it has some shortcomings. For example, it need a server
+or computer to run locally. Nowawdays, mobile is more popular and convenient
+than computer. So I decided to rewrite it in React Native. As I am already very
+familiar with React, Redux, React Native looks very natural and familiar to me.
+The big differences is the component changes. Besides that, other differences
+are related to mobile screen itself. E.g. in mobile app, there is a Keyboard
+avoiding issue, which is not present in desktop.
+
+<h2>Technology stack</h2>
+Besides the React Native, for state management I made some evaluation between
+Redux Toolkit (with Thunk) and Redux Tookkit Query (RTK Query). As RTK Query has
+one benefit is the caching capability, which is very powerful and convenient.
+Therefore, I chosen RTK Query for state management. For Data storage part,
+initially I use Firebase 9 and firestore. Firebase works fine with the app, but
+later I think if I use firebase, then later I still need to add advertisements
+or monthly payment for cover the firebase cost. Then it would be no difference
+with Quizlet. So I made a new branch to totally switch to local database
+storage. For local database storage solution, initially i prefer realm database
+as it's fast than sqlite. However, unfortunately, the realm doesn't support expo
+48 (only alpha version available). So I chosen sqlite for the local database
+storage. So the technology stack is: react native + RKT query + sqlite.
+
+<h2>Features</h2>
+The main features of the app include.
+<ul>
+  <li>Dark mode support, light dark mode switch</li>
+  <li>Filter word books and words</li>
+  <li>Pin/Unpin word books</li>
+  <li>Multi-lingual supports</li>
+  <li>Error book records mistakes made in quizes</li>
+  <li>Batch import words from computer or URL</li>
+</ul>
+
+<h2>Demo</h2>
+Preview video in youtube
+<a href="https://www.youtube.com/watch?v=o0WuIzTzR5I"
+  >https://www.youtube.com/watch?v=o0WuIzTzR5I</a
+>
+Documentation
+<a href="https://wordslet-wordslet.vercel.app"
+  >https://wordslet-wordslet.vercel.app</a
+>
+<figure>
+  <img src="/img/posts/wordslet2/menu.png" alt="menu" width="800" />
+  <figcaption class="text-center">Drawer menu</figcaption>
+</figure>
+<figure>
+  <img src="/img/posts/wordslet2/wordbooks.png" alt="wordbooks" width="800" />
+  <figcaption class="text-center">Word books</figcaption>
+</figure>
+<figure>
+  <img src="/img/posts/wordslet2/correct.png" alt="corret answer" width="800" />
+  <figcaption class="text-center">Correct answer</figcaption>
+</figure>
+<figure>
+  <img src="/img/posts/wordslet2/wrong.png" alt="wrong answer" width="800" />
+  <figcaption class="text-center">Wrong answer</figcaption>
+</figure>
+<figure>
+  <img src="/img/posts/wordslet2/learn.png" alt="learn" width="800" />
+  <figcaption class="text-center">Learn</figcaption>
+</figure>
+<figure>
+  <img src="/img/posts/wordslet2/edit.png" alt="Edit" width="800" />
+  <figcaption class="text-center">Edit</figcaption>
+</figure>
